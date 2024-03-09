@@ -133,7 +133,7 @@ function Calculatrice() {
                 {`
         .calculatrice {
             width: 380px;
-            height: 450px;
+            height: 400px;
             margin: 0 auto; /* Centre horizontalement */
             margin-top: 50px; /* Marge en haut pour centrer verticalement */
             padding: 20px;
