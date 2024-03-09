@@ -7,10 +7,10 @@ Ce projet est une application de calculatrice simple construite avec React et Vi
 1. Clonez ce dépôt :  git clone https://github.com/Simonracer/calculatrice.git
 2. Installez les dépendances :  npm install
 
-#Utilisation
+#Utilisation:
 Pour lancer l'application en mode développement, utilisez la commande suivante dans le terminal:  npm run dev
 
-#Tests
+#Tests:
 Pour exécuter les tests unitaires, utilisez la commande suivante dans le terminal:  npm test
 
 
