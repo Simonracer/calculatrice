@@ -36,6 +36,7 @@ function Calculatrice() {
         setEstCalcule(false);
     };
 
+
     // Fonction pour effectuer le calcul
     const gererCalculer = () => {
         try {
@@ -43,13 +44,27 @@ function Calculatrice() {
             if (entree.includes('/0')) {
                 throw new Error('Division par zero');
             }
+
+            // Vérifier si l'entrée commence par un opérateur (autre que le signe moins) suivi de chiffres
+            if (estOperateur(entree[0]) && entree[0] !== '-' && !isNaN(parseFloat(entree.substring(1)))) {
+                setEntree('0'); // Réinitialiser l'entrée à 0
+                setEstCalcule(false); // Réinitialiser estCalcule à false
+                return; // Sortir de la fonction pour éviter d'évaluer l'expression
+            }
+
             // Évaluer l'expression et mettre à jour l'entrée avec le résultat
-            setEntree(evaluate(entree.replace('--', '+')).toString());
+            setEntree(evaluate(entree).toString());
             setEstCalcule(true); // Indiquer que le calcul est effectué
         } catch (error) {
             setEntree('Erreur'); // En cas d'erreur, afficher 'Erreur'
         }
     };
+
+
+
+
+
+
 
     // Fonction pour supprimer le dernier caractère de l'entrée
     const gererSupprimerDernierCaractere = () => {

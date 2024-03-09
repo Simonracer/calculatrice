@@ -254,3 +254,27 @@ test('doit gérer les calculs avec des parenthèses', () => {
     expect(affichage.textContent).toBe('9');
 });
 
+
+test('doit afficher 0 lorsqu\'une opération de division par un nombre est suivie d\'un égal', () => {
+    render(<Calculatrice />);
+    const affichage = screen.getByTestId('affichage');
+
+    fireEvent.click(screen.getByText('/'));
+    fireEvent.click(screen.getByText('5'));
+    fireEvent.click(screen.getByText('='));
+    expect(affichage.textContent).toBe('0');
+});
+
+
+
+test('doit afficher 0 lorsqu\'une opération de multiplication par un nombre est suivie d\'un égal', () => {
+    render(<Calculatrice />);
+    const affichage = screen.getByTestId('affichage');
+
+    fireEvent.click(screen.getByText('*'));
+    fireEvent.click(screen.getByText('2'));
+    fireEvent.click(screen.getByText('='));
+    expect(affichage.textContent).toBe('0');
+});
+
+
